@@ -1,0 +1,146 @@
+/* === Global Styles === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+}
+
+
+/* === Header & Navbar=== */
+.navbar {
+    background-color: #444;
+    width: 100%;
+    line-height: 80px;
+    font-size: 1.2rem;
+    padding: 0 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+  }
+  .nav-link {
+    text-decoration: none;
+    color: #fff;
+  }
+   .navbar-logo {
+    padding: 0 30px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #fff;
+    text-decoration: none;
+  }
+  .navbar .navbar-logo {
+    font-size: 28px;
+    font-weight: 700;
+  }
+  .nav-wrapper {
+    list-style: none;
+    padding: 0 100px;
+  }
+  .nav-wrapper .nav-item {
+    display: inline-block;
+  }
+  .navbar .nav-wrapper .nav-item .nav-link {
+    display: block;
+    padding: 0 30px;
+  }
+  .navbar .nav-wrapper .nav-item .nav-link:hover {
+    background-color: rgba(255,255,255,0.15);
+  }
+  .navbar .navbar-toggler {
+    display: none;
+  }
+
+
+
+/* === Banner === */
+
+#banner {
+    background: url("../images/truck.jpg") center center no-repeat;
+    height: 100vh;
+    width: 100%;
+}
+
+.banner-text {
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* === Media Styles === */
+
+@media (max-width: 1030px) {
+.navbar {
+    display: initial;
+    padding: 0;
+    height: auto;
+}
+    .nav-wrapper {
+      width: 100%;
+      padding: 0;
+      background-color: rgba(0,0,0,0.9);
+      height: 100vh;
+      max-height: 0;
+      overflow: hidden;
+      transition: all ease-in-out 0.3s;
+      text-align: center;
+    }
+    .nav-wrapper.open {
+      max-height: 100vh;
+    }
+    .nav-wrapper  .nav-item {
+      width: 100%;
+    }
+
+    .navbar .navbar-toggler {
+      display: block;
+      position: absolute;
+      height: 40px;
+      top: 20px;
+      right: 20px;
+      color: #fff;
+      outline: none;
+      padding: 0 5px;
+      cursor: pointer;
+    }
+    .navbar .navbar-toggler span,
+    .navbar .navbar-toggler span::before,
+    .navbar .navbar-toggler span::after {
+      display: block;
+      content: '';
+      background-color: #fff;
+      height: 3px;
+      width: 28px;
+      border-radius: 4px;
+      transition: all ease-in-out 0.3s;
+    }
+    .navbar .navbar-toggler span::before {
+      transform: translateY(-8px);
+    }
+    .navbar .navbar-toggler span::after {
+      transform: translateY(5px);
+    }
+    
+    .navbar .navbar-toggler.open-navbar-toggler span {
+      background-color: transparent;
+    }
+    .navbar .navbar-toggler.open-navbar-toggler span::before {
+      transform: translateY(0px) rotate(45deg);
+    }
+    .navbar .navbar-toggler.open-navbar-toggler span::after {
+      transform: translateY(-3px) rotate(-45deg);
+    }
+}
